@@ -1,5 +1,6 @@
 import models.Cuenta;
 import models.Empleado;
+import models.Libro;
 
 import java.util.Scanner;
 
@@ -18,14 +19,18 @@ public class Main {
                 case 2:
                     ej2();
                     break;
+                case 3:
+                    ej3();
+                    break;
             }
         }
 
     }
     private static void menu(){
         System.out.println("\n------MENU DE OPCIONES------\n");
-        System.out.println("1 - Ejercicio 1\n");
-        System.out.println("2 - Ejercicio 2\n");
+        System.out.println("1 - Ejercicio 1");
+        System.out.println("2 - Ejercicio 2");
+        System.out.println("3 - Ejercicio 3\n");
         System.out.println("0 para salir");
         System.out.println("----------------------------");
     }
@@ -86,6 +91,32 @@ public class Main {
             }
 
         }
+
+    }
+
+    private static void ej3(){
+        Libro primerLibro = new Libro()
+                .titulo("El Quijote")
+                .autor("Miguel de Cervantes")
+                .precio(500)
+                .copias(10);
+
+        Libro segLibro = new Libro()
+                .titulo("Cien años de soledad")
+                .autor("Gabriel Garcia Marquez")
+                .precio(700)
+                .copias(5);
+
+        System.out.println("" + primerLibro.toString());
+        System.out.println("" + segLibro.toString());
+
+        primerLibro.venta(3);
+        System.out.println("" + primerLibro.toString());
+
+        segLibro.venta(8);
+
+        segLibro.sumaInventario(5);
+        System.out.println("" + segLibro.toString());
 
     }
 
